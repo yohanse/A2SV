@@ -3,7 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-    
+        
         p1,p2=m-1,n-1
         
         while p1>-1 and p2>-1:
