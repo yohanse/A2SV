@@ -3,20 +3,23 @@ testCase = int(input())
 for i in range(testCase):
     shirt1, shirt2 = input().split()
     size = min(len(shirt1), len(shirt2))
-    for j in range(size):
-        if shirt1[j]=='X' or shirt2[j]=='X':
-            p1 = p2 = j
-            while shirt1[p1] == 'X':
-                p1 += 1
-            while shirt2[p2] == 'X':
-                p2 += 1
-            if value[shirt1[j]] > value[shirt2[j]]:
-                print('>')
-            elif value[shirt1[j]] < value[shirt2[j]]:
+    if value[shirt1[-1]] > value[shirt2[-1]]:
+        print('>')
+    elif value[shirt1[-1]] < value[shirt2[-1]]:
+        print('<')
+    else:
+        if shirt1[-1] == 'S':
+            if len(shirt1) > len(shirt2):
                 print('<')
-            elif 
-            
-        elif value[shirt1[j]] > value[shirt2[j]]:
-            print('>')
-        elif value[shirt1[j]] < value[shirt2[j]]:
-            print('<')
+            elif len(shirt1) < len(shirt2):
+                print('>')
+            else:
+                print('=')
+        else:
+            if len(shirt1) < len(shirt2):
+                print('<')
+            elif len(shirt1) > len(shirt2):
+                print('>')
+            else:
+                print('=')
+    
