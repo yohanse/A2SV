@@ -6,7 +6,7 @@ for i in range(t):
     n, m = list(map(int,input().split()))
     for r in range(n):
         num = list(map(int,input().split()))
-        res.append(num)
+        res.append(num) 
         for c in range(m):
             positive[r + c] = num[c] + positive.get(r+c, 0)
             negative[r - c] = num[c] + negative.get(r-c, 0)
