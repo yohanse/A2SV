@@ -1,0 +1,18 @@
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+
+        rows, cols = len(mat), len(mat[0])
+        if rows*cols != r*c:
+            return mat
+
+        i, j = 0, 0
+        reshape = [[0 for _ in range(c)] for _ in range(r)]
+        for p in range(rows):
+            for q in range(cols):
+                print(i,j)
+                reshape[i][j] = mat[p][q]
+                j += 1
+                if j == c:
+                    i += 1
+                    j = 0
+        return reshape
