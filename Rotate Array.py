@@ -3,9 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        length=len(nums)
-        while k>length:
-            k=k-length
-        nums.extend(nums[:length-k])
-        for i in range(length-k):
-            nums.pop(0)
+        N = len(nums)
+        temp = nums.copy()
+        for i in range(N):
+            nums[(i + k)%N] = temp[i]
