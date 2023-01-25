@@ -1,18 +1,24 @@
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
-        stack=''
-        ans=[]
-        for fast in range(len(s)-1):
-            stack=stack+s[fast]
-            for i in stack:
-                if i in s[fast+1:]:
-                    break
-            else:
-                ans.append(len(stack))
-                stack=''
-        if s[-1] in stack or stack=='':
-            ans.append(len(stack)+1)
-        else:
-            ans.append(len(stack))
-            ans.append(1)
-        return ans
+
+        need, have, letter = 0, 0, [0]*26
+        count = Counter(s)
+        res = []
+
+        h = 0
+        for i, l in enumerate(s):
+
+            count[l] -= 1
+            letter[ord(l) - ord("a")] += 1
+
+            if count[l] == 0:
+                have += 1
+
+            if letter[ord(l) - ord("a")] == 1:
+                need += 1
+
+            if need == have:
+                res.append(i - h + 1)
+                h = i + 1
+
+        return res
