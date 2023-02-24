@@ -1,10 +1,6 @@
-import sys
-
 def factorial(num):
-    tot = 1
-    for i in range(num):
-        tot += i
-    return tot
+    return (num*(num - 1))/2
+
 N, k = list(map(int,input().split()))
 nums = list(map(int,input().split()))
 slow = fast = window_sum = res = 0
@@ -14,8 +10,7 @@ while fast < N:
     while window_sum > k:
         window_sum -= nums[slow]
         slow += 1
-    res += factorial(fast - count) - factorial(fast - slow)   
+    res += factorial(fast - count + 1) - factorial(fast - slow + 1)
     fast += 1
-print(res)       
-
-
+res += factorial(fast - slow + 1) 
+print(int(res)) 
