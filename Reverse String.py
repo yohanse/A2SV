@@ -3,9 +3,14 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        l = 0
-        r = len(s)-1
-        while l<r:
-            s[l],s[r]=s[r],s[l]
-            l+=1
-            r-=1
+        self.list1=s
+        result = self.rec(0, len(s)-1)
+         
+        
+    def rec(self,l,r):
+        if l>r:
+            return 
+        self.list1[l],self.list1[r]=self.list1[r],self.list1[l]
+        l+=1
+        r-=1
+        return self.rec(l,r)
