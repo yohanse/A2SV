@@ -5,7 +5,6 @@ class Solution:
             i = len(condition) - 1
 
             if index == N:
-             
                 if i > 1:
                     for j in range(2, i + 1):
                         if condition[j] != condition[j - 1] + condition[j - 2]:
