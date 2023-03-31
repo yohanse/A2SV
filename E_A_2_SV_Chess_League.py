@@ -1,39 +1,40 @@
 n, k = list(map(int, input().split()))
 score = list(map(int, input().split()))
-list = [[i] for i in range(2 ** n)]
-res = []
+check = [i for i in range(2 ** n)]
 
-for count in range(n):
-    power = n - count - 1
-    size = 2**(power + 1)
-    temp = [[] for i in range(2**power)]
-    for i in range(0, size, 2):
-       
-        copy = []
+def merge(nums):
+    if len(nums) == 1:
+        return nums
+    
+    mid = len(nums) // 2
+    left = merge(nums[:mid])
+    right = merge(nums[mid:])
+    return combine(left, right)
+
+def combine(list, list1):
+    copy = []
         
+    num = 1000000
+    for j in list1:
+        num = min(num, score[j])
 
-        num = 1000000
-        for j in list[i + 1]:
-            num = min(num, score[j])
+    for j in list:
+        if score[j] + k >= num:
+            copy.append(j)
 
-        for j in list[i]:
-            if score[j] + k >= num:
-                copy.append(j)
+    num = 1000000
+    for j in list:
+        num = min(num, score[j])
 
-        num = 1000000
-        for j in list[i]:
-            num = min(num, score[j])
+    for j in list1:
+        if score[j] + k >= num:
+            copy.append(j)
 
-        for j in list[i + 1]:
-            if score[j] + k >= num:
-                copy.append(j)
-        temp[i//2] = copy.copy()
+    return copy
 
-    list = temp.copy()
-
-for i in list[0]:
+ans = merge(check)
+for i in ans:
     print(i + 1, end = " ")
-
 
         
 
