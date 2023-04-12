@@ -1,7 +1,7 @@
 n = int(input())
 nums = list(map(int, input().split()))
 
-check = False
+
 for i in range(n):
     curr = nums[i]
     for _ in range(3):
@@ -10,5 +10,4 @@ for i in range(n):
         print("YES")
         break
 else:
-
     print("NO")
