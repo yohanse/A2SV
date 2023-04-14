@@ -6,28 +6,7 @@
 #         self.right = right
 class Solution:
     def sumEvenGrandparent(self, root: TreeNode) -> int:
-        def add_node(root):
-            stack,temp,count,ans=[root],[],0,0
-            while stack:
-                root=stack.pop()
-                if root:
-                    temp.append(root.left)
-                    temp.append(root.right)
-                    if count==2:ans+=root.val
-                if stack==[]:
-                    stack=temp.copy()
-                    temp=[]
-                    count+=1
-                    if count==3:break
-            return ans
-
-        def dfs(root):
-            stack,res=[root],0
-            while stack:
-                root=stack.pop()
-                if root:
-                    if root.val%2==0:res+=add_node(root)
-                    stack.append(root.left)
-                    stack.append(root.right)
-            return res
-        return dfs(root)
+        def rec(grand,father,son):
+            if not son:return 0
+            return rec(father,False if son.val%2 else True,son.right)+rec(father,False if son.val%2 else True,son.left)+(son.val if grand else 0)
+        return rec(False,False,root)
