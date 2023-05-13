@@ -7,9 +7,6 @@ class Solution:
         while i != 0 and arr[(i - 1) // 2] < arr[i]:
             arr[i], arr[(i - 1) // 2] = arr[(i - 1) // 2], arr[i]
             i = (i - 1) // 2
-        
-            
-            
     
     #Function to build a Heap from array.
     def buildHeap(self,arr,n):
