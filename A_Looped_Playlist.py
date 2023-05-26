@@ -25,4 +25,3 @@ for index in range(count * n):
         slow += 1
         slow = slow % n
 print(res[0], res[1]%n)
-

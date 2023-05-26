@@ -1,6 +1,6 @@
-def coloring(graph, colors):
-    colors[0] = True
-    stack = [0]
+def coloring(vertex, graph, colors):
+    colors[vertex] = True
+    stack = [vertex]
     count = 0
     while stack:
         vertex = stack.pop()
@@ -22,5 +22,9 @@ for i in range(n):
     num = list(map(int, input().split()))
     for j in num[1:]:
         graph[i].append(j - 1)
-       
-print(coloring(graph, colors))
+for i in range(n):
+    if colors[i] == None and coloring(i, graph, colors) == ":(":    
+        print(":(")
+        break
+else:
+    print(":)")
