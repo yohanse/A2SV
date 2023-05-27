@@ -1,14 +1,15 @@
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        leng=len(nums)
-        table={}
-        def back(target,num,leng,i=0,tot=0):
-            if i==leng:
-                if target!=tot:
-                    return 0
-                return 1
-            if (i,tot) in table:
-                return table[(i,tot)]
-            table[(i,tot)]=back(target,num,leng,i+1,tot+num[i])+back(target,num,leng,i+1,tot-num[i])
-            return table[(i,tot)]
-        return back(target,nums,leng)
+        dp = {}
+        N = len(nums)
+        def rec(i, tot):
+            if i == N:
+                return tot == target
+
+            if (i, tot) in dp:
+                return dp[(i, tot)]
+                
+            dp[(i, tot)] = rec(i + 1, tot + nums[i]) + rec(i + 1, tot - nums[i])
+            return dp[(i, tot)]
+
+        return rec(0, 0)
