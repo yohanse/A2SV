@@ -1,11 +1,19 @@
 t  = int(input())
+
+# Processing each test case
 for _ in range(t):
+
+    # Reading size of the array
     n = int(input())
-    nums = list(map(int, input().split()))
-    for i in range(n):
-        for j in range(n):
-            if i != j:
-                temp = nums[i] | nums[j]
-                nums[i] = 0
-                nums[j] = temp
-    print(sum(nums))
+
+    # Reading elements of the array
+    a = list(map(int, input().split()))
+
+    min_sum = 0 # Begin by initializing a variable where none of the bits are set to one.
+
+    # To determine the result of performing a bitwise OR operation on the entire array.
+    for i in a:
+        # Perform a bitwise operation using the variable min_sum.
+        min_sum |= i 
+
+    print(min_sum)

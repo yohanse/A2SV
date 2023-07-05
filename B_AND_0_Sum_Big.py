@@ -1,11 +1,9 @@
-def power(n, k):
-    if k == 1:
-        return n
-    if k % 2 == 1:
-        return (n * (power(n, k // 2) ** 2)) % (10 ** 9 + 7)
-    return (power(n, k // 2) ** 2) % (10 ** 9 + 7)
+def solve():
+    mod = 10**9 + 7
+    t = int(input())
+    for _ in range(t):
+        n, k = map(int,input().split())
+        ans = pow(2*k-1,n,mod)
+        print(ans)
 
-t = int(input())
-for _ in range(t):
-    n, k = list(map(int, input().split()))
-    print(power(n, k))
+solve()

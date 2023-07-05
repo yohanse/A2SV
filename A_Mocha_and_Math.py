@@ -5,4 +5,4 @@ for i in range(t):
     xand = nums[0]
     for i in nums:
         xand = xand & i
-    print(xand)
+    print(min(nums))
