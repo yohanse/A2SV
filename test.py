@@ -1,29 +1,15 @@
-from collections import defaultdict
-
-
-class Solution: 
-    def accountsMerge(self, accounts): 
-        names = {} 
-        graph = defaultdict(set) 
-        for acc in accounts: 
-            name = acc[0] 
-            for email in acc[1:]: 
-                graph[acc[1]].add(email) 
-                graph[email].add(acc[1]) 
-                names[email] = name
-
-        comps, seen, ans, i = defaultdict(list), set(), [], 0
-
-        def dfs(node, i):
-            comps[i].append(node)
-            seen.add(node)
-            for neib in graph[node]:
-                if neib not in seen: 
-                    dfs(neib, i)
-        
-        for email in graph:
-            if email not in seen:
-                dfs(email, i)
-                i += 1
-        
-        return [[names[val[0]]] + sorted(val) for _,val in comps.items()]
+num1 = int(input()) 
+if num1 == 1: print("A") 
+elif num1 >= 70 and num1 <= 72: print(chr(num1-4)) 
+elif num1 == 2: print("E") 
+elif num1 >= 73 and num1 <= 75: print(chr(num1-3)) 
+elif num1 == 3: print("I") 
+elif num1 >= 76 and num1 <= 79: print(chr(num1-2)) 
+elif num1 == 4: print("N") 
+elif num1 == 5: print("O") 
+elif num1 >= 80 and num1 <= 83: print(chr(num1)) 
+elif num1 == 6: print("T") 
+elif num1 >= 84 and num1 <= 89: print(chr(num1+1)) 
+elif num1 < 0: print("Negative numbers aren't allowed.") 
+elif num1 == 0 or (num1 >= 90 and num1 <= 99): print("Not an alphabet") 
+else: print("Unknown")
