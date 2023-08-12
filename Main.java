@@ -1,25 +1,44 @@
-import java.io.* ;
-
 class Main {
-  public static void main ( String[] args ) {
-    int[] data = {3, 1, 5, 7, 4, 12, -3, 8, -2};
-    
-    // Declare and initialize variables for the two largest
-    int largest = Integer.MIN_VALUE;
-    int secondLargest = Integer.MIN_VALUE;
+  public static void main(String[] args) {
 
-    // Compute the two largest
-    for (int value : data) {
-      if (value > largest) {
-        secondLargest = largest; // Update the second largest
-        largest = value; // Update the largest
-      } else if (value > secondLargest && value < largest) {
-        secondLargest = value; // Update the second largest
-      }
-    }
-      
-    // Write out the two largest
-    System.out.println("Largest: " + largest);
-    System.out.println("Second Largest: " + secondLargest);
+    System.out.println(maxProfit(new int[] { 3, 1, 9, 4, 20 }));
+    System.out.println(maxProfit1(new int[] { 3, 1, 9, 4, 20 }));
   }
+
+  public static int maxProfit(int[] prices) {
+    if (prices == null || prices.length == 0) {
+        return 0;
+    }
+
+    int n = prices.length;
+    int maxProfit = 0;
+    int maxPriceSoFar = prices[n - 1];  // Start from the last day's price
+
+    for (int i = n - 2; i >= 0; i--) {  // Start iterating from the second last day
+        if (prices[i] < maxPriceSoFar) {  // If current price is less than max, sell at max price
+            maxProfit += maxPriceSoFar - prices[i];
+            maxPriceSoFar = prices[i];  // update the maxPrice with the current price
+        } else {  // If current price is more than the max price seen so far, update max price
+            maxPriceSoFar = prices[i];
+        }
+    }
+
+    return maxProfit;
+}
+public static int maxProfit1(int[] prices) {
+  if (prices == null || prices.length == 0) {
+      return 0;
+  }
+
+  int n = prices.length;
+  int maxProfit = 0;
+
+  for (int i = 1; i < n; i++) {
+      if (prices[i] > prices[i - 1]) {
+          maxProfit += prices[i] - prices[i - 1];
+      }
+  }
+
+  return maxProfit;
+}
 }
