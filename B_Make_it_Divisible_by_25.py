@@ -17,22 +17,23 @@ for _ in range(test_cases):
 
 
 
-# t = int(input())
+t = int(input())
 
-# def check(n, test):
-#     c = 0
-#     ans = []
-#     for i in range(len(n) - 1, -1, -1):
-#         if test[c] == n[i]:
-#             ans.append(i)
-#             c += 1
-#         if c == 2:
-#             return ans
-# for _ in range(t):
-#     n = int(input())
-#     res = 100
-#     for k in ["00", "52", "57", "05"]:
-#         ans = check(str(n), k)
-#         if ans != None:
-#             res = min(res, len(str(n)) - ans[0] + ans[0] - ans[1] - 2)
-#     print(res)
+def check(n, test):
+    c = 0
+    ans = []
+    for i in range(len(n) - 1, -1, -1):
+        if test[c] == n[i]:
+            ans.append(i)
+            c += 1
+        if c == 2:
+            return ans
+        
+for _ in range(t):
+    n = int(input())
+    res = 100
+    for k in ["00", "52", "57", "05"]:
+        ans = check(str(n), k)
+        if ans != None:
+            res = min(res, len(str(n)) - ans[0] + ans[0] - ans[1] - 2)
+    print(res)
