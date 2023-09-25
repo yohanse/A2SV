@@ -1,4 +1,8 @@
 {
-    "cph.general.onceMaintainerMessage": false,
-    "java.debug.settings.onBuildFailureProceed": true
+  "cph.general.onceMaintainerMessage": false,
+  "java.debug.settings.onBuildFailureProceed": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
 }
