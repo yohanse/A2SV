@@ -1,0 +1,65 @@
+{
+    "famous_people_last_speakings": [
+      {
+        1963
+        "name": "John Fitzgerald Kennedy",
+        "profession": "35th President of the United States",
+        "last_speaking": "That's very obvious."
+      },
+      {
+        1968
+        "name": "Martin Luther King Jr.",
+        "profession": "Civil Rights Activist and Minister",
+        "last_speaking": "Ben, make sure you play 'Take My Hand, Precious Lord' in the meeting tonight. Play it real pretty."
+      },
+      {
+        1965
+        "name": "Sir Winston Churchill",
+        
+        "profession": "British Prime Minister and Statesman", it is better to include former to more describe
+        "last_speaking": "I'm bored with it all."
+      },
+      {
+        1955
+        "name": "Albert Einstein",
+        "profession": "Theoretical Physicist",
+        "last_speaking": "I want to go when I want. It is tasteless to prolong life artificially. I have done my share, it is time to go. I will do it elegantly."
+      },
+      {
+        1962
+        "name": "Marilyn Monroe",
+        "profession": "Actress and Model",
+        "last_speaking": "Say goodbye to Pat, say goodbye to Jack and say goodbye to yourself, because you're a nice guy."
+      },
+      {
+        1977
+        "name": "Elvis Presley",
+        "profession": "Singer and Actor",
+        "last_speaking": "I'm going to the bathroom to read."
+      },
+      {
+        1980
+        "name": "John Lennon",
+        "profession": "Musician, Singer, and Songwriter",
+        "last_speaking": "I'm shot."
+      },
+      {
+        1981
+        "name": "Bob Marley",
+        "profession": "Reggae Musician and Activist",
+        "last_speaking": "Money can't buy life."
+      },
+      {
+        2011
+        "name": "Steve Jobs",
+        "profession": "Co-founder of Apple Inc.",
+        "last_speaking": "Oh wow. Oh wow. Oh wow."
+      },
+      {
+        1998
+        "name": "Frank Sinatra",
+        "profession": "Singer and Actor",
+        "last_speaking": "I'm losing it."
+      }
+    ]
+  }
